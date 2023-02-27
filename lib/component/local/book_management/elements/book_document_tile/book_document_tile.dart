@@ -40,7 +40,14 @@ class BookDocumentTile extends HookConsumerWidget {
                         SizedBox(height: 10.sp),
                         Row(
                           children: [
-                            Text(book.title, style: bodyBold(highEmphasis)),
+                            Container(
+                              width: 250.sp,
+                              child: Text(
+                                book.title,
+                                style: bodyBold(highEmphasis),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
                             const Spacer(),
                             const Text('貸出日'),
                           ],
