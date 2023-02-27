@@ -3,9 +3,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:my_book_library/domain/book_document/book_document.dart';
 import 'package:my_book_library/importer.dart';
 
-import 'elements/book_status/checked_out_status/checked_out_status.dart';
+import 'elements/book_status/on_loan_status/on_loan_status.dart';
 import 'elements/book_status/overdue_status/overdue_status.dart';
-import 'elements/book_status/collected_status/collected_status.dart';
+import 'elements/book_status/available_status/available_status.dart';
 import 'elements/book_status/other_status/other_status.dart';
 
 class BookDocumentTile extends HookConsumerWidget {
@@ -32,7 +32,7 @@ class BookDocumentTile extends HookConsumerWidget {
                           padding: const EdgeInsets.all(0)),
                       onPressed: () {},
                       //TODO: 対応した値になるように調整する
-                      child: const CheckedOutStatus()),
+                      child: const OnLoanStatus()),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Column(

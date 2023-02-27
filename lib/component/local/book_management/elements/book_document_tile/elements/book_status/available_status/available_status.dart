@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_book_library/importer.dart';
 
-class CollectedStatus extends StatelessWidget {
-  const CollectedStatus({Key? key}) : super(key: key);
+class AvailableStatus extends StatelessWidget {
+  const AvailableStatus({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

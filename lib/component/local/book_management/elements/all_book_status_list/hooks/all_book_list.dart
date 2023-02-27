@@ -1,5 +1,15 @@
 import '/domain/book_document/book_document.dart';
 
+enum BookState {
+  available('蔵書'),
+  onLoan('貸出中'),
+  overdue('延滞中'),
+  other('その他');
+
+  final String displayState;
+  const BookState(this.displayState);
+}
+
 final allBookList = [
   const BookDocument(
     id: '1',
