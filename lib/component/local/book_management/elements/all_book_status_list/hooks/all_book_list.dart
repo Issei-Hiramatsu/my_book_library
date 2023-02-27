@@ -14,7 +14,7 @@ final allBookList = [
   const BookDocument(
     id: '1',
     title: 'はらぺこあおむし ',
-    bookStatus: '貸出中',
+    bookStatus: '延滞中',
   ),
   const BookDocument(
     id: '2',

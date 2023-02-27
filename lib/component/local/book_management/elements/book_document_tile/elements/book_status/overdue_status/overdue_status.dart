@@ -10,7 +10,7 @@ class OverdueStatus extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 4.sp, horizontal: 8.sp),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: tertiary,
+        color: tertiaryPale,
         borderRadius: BorderRadius.circular(4.sp),
       ),
       child: Text('延滞中', style: bodyRegular(midEmphasis)),
