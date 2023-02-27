@@ -31,7 +31,7 @@ class BookDocumentTile extends HookConsumerWidget {
                       style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(0)),
                       onPressed: () {},
-                      //対応した値になるように調整する
+                      //TODO: 対応した値になるように調整する
                       child: const CheckedOutStatus()),
                   const SizedBox(width: 10),
                   Expanded(

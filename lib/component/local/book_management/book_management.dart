@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:my_book_library/importer.dart';
 
 import '../../shared/single/custom_tab/custom_tab.dart';
 import 'elements/all_book_status_list/all_book_status_list.dart';
@@ -16,12 +17,12 @@ class BookManagement extends HookConsumerWidget {
         children: [
           SharedCustomTab(
             controller: bookManagementTabController,
-            tabs: const [
-              Tab(text: 'すべて'),
-              Tab(text: '蔵書'),
-              Tab(text: '貸出中'),
-              Tab(text: '延滞中'),
-              Tab(text: 'その他'),
+            tabs: [
+              Tab(text: 'すべて', height: 32.sp),
+              Tab(text: '蔵書', height: 32.sp),
+              Tab(text: '貸出中', height: 32.sp),
+              Tab(text: '延滞中', height: 32.sp),
+              Tab(text: 'その他', height: 32.sp),
             ],
           ),
           Expanded(
