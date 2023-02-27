@@ -4,3 +4,5 @@
 
 book ステータス {id, title,description,bookStatus,}
 library ステータス{ name,description,bookList}
+
+本詳細にとぶ
