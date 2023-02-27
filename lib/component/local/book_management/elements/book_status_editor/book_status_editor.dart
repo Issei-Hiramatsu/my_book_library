@@ -15,8 +15,7 @@ class BookStatusEditor extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isEditable = ref.watch(isEditableProvider);
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.sp),
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [

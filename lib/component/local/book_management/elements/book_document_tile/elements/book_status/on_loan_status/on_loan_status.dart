@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_book_library/importer.dart';
 
-class CheckedOutStatus extends StatelessWidget {
-  const CheckedOutStatus({Key? key}) : super(key: key);
+class OnLoanStatus extends StatelessWidget {
+  const OnLoanStatus({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
