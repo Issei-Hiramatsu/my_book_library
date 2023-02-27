@@ -25,7 +25,7 @@ class BookDocumentTile extends HookConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextButton(
                       style: TextButton.styleFrom(
@@ -36,7 +36,6 @@ class BookDocumentTile extends HookConsumerWidget {
                   const SizedBox(width: 10),
                   Expanded(
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: 10.sp),
                         Row(

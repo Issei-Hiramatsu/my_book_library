@@ -6,16 +6,14 @@ class CollectedStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.symmetric(vertical: 4.sp, horizontal: 8.sp),
-      child: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: tertiaryPale,
-          borderRadius: BorderRadius.circular(4.sp),
-        ),
-        child: Text('蔵書', style: bodyRegular(midEmphasis)),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: tertiaryPale,
+        borderRadius: BorderRadius.circular(4.sp),
       ),
+      child: Text('蔵書', style: bodyRegular(midEmphasis)),
     );
   }
 }

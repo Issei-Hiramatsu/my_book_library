@@ -6,16 +6,14 @@ class OverdueStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.symmetric(vertical: 4.sp, horizontal: 8.sp),
-      child: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: tertiary,
-          borderRadius: BorderRadius.circular(4.sp),
-        ),
-        child: Text('延滞中', style: bodyRegular(midEmphasis)),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: tertiary,
+        borderRadius: BorderRadius.circular(4.sp),
       ),
+      child: Text('延滞中', style: bodyRegular(midEmphasis)),
     );
   }
 }

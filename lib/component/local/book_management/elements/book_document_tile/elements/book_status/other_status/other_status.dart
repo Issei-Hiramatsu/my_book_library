@@ -6,18 +6,16 @@ class OtherStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.symmetric(vertical: 4.sp, horizontal: 8.sp),
-      child: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: surfaceSecondary,
-          borderRadius: BorderRadius.circular(4.sp),
-        ),
-        child: Text(
-          'その他',
-          style: bodyRegular(midEmphasis),
-        ),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: surfaceSecondary,
+        borderRadius: BorderRadius.circular(4.sp),
+      ),
+      child: Text(
+        'その他',
+        style: bodyRegular(midEmphasis),
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../shared/single/custom_tab/custom_tab.dart';
+import 'elements/all_book_status_list/all_book_status_list.dart';
 
 class BookManagement extends HookConsumerWidget {
   const BookManagement({Key? key, required}) : super(key: key);
@@ -23,6 +24,17 @@ class BookManagement extends HookConsumerWidget {
               Tab(text: 'その他'),
             ],
           ),
+          Expanded(
+              child: TabBarView(
+            controller: bookManagementTabController,
+            children: [
+              AllBookList(),
+              Container(),
+              Container(),
+              Container(),
+              Container(),
+            ],
+          ))
         ],
       ),
     );
