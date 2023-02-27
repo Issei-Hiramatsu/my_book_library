@@ -10,6 +10,8 @@ const Color primary10 = Color(0xffB8E9F7);
 
 const Color secondary = Color(0xffE7A15F);
 
+const Color tertiary = Color(0xffF2CFAA);
+
 const Color tertiaryPale = Color(0xffFAAAAF);
 
 const Color white = Color(0xffFFFFFF);
