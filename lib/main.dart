@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_book_library/importer.dart';
+
+import 'component/local/book_management/book_management.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,11 +12,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'myBookLibrary',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: null);
+    return ScreenUtilInit(
+      designSize: const Size(390, 844),
+      builder: (context, child) {
+        return MaterialApp(
+          title: 'myBookLibrary',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: BookManagement(),
+        );
+      },
+    );
   }
 }
