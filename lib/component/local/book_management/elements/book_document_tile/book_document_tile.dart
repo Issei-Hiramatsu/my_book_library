@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:my_book_library/domain/book_document/book_document.dart';
 import 'package:my_book_library/importer.dart';
 
+import '/domain/book_document/book_document.dart';
 import '../../hooks/use_is_editable/use_is_editable.dart';
 import 'elements/book_status/on_loan_status/on_loan_status.dart';
 import 'elements/book_status/overdue_status/overdue_status.dart';
@@ -11,7 +11,7 @@ import 'elements/book_status/available_status/available_status.dart';
 import 'elements/book_status/other_status/other_status.dart';
 
 class BookDocumentTile extends HookConsumerWidget {
-  BookDocumentTile({
+  const BookDocumentTile({
     Key? key,
     required this.book,
   }) : super(key: key);
@@ -34,7 +34,7 @@ class BookDocumentTile extends HookConsumerWidget {
                   TextButton(
                       style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(0)),
-                      onPressed: () {
+                      onPressed: () async {
                         if (isEditable) {
                           switch (bookState.value) {
                             case '蔵書':
@@ -55,36 +55,23 @@ class BookDocumentTile extends HookConsumerWidget {
                       child: Column(
                         children: [
                           if (bookState.value == '蔵書')
-                            AvailableStatus()
+                            const AvailableStatus()
                           else if (bookState.value == '貸出中')
-                            OnLoanStatus()
+                            const OnLoanStatus()
                           else if (bookState.value == '延滞中')
-                            OverdueStatus()
+                            const OverdueStatus()
                           else
-                            OtherStatus(),
+                            const OtherStatus(),
                         ],
                       )),
-                  const SizedBox(width: 10),
                   Expanded(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10.sp),
-                        Row(
-                          children: [
-                            Container(
-                              width: 250.sp,
-                              child: Text(
-                                book.title,
-                                style: bodyBold(highEmphasis),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            const Spacer(),
-                            const Text('貸出日'),
-                          ],
-                        ),
-                        SpaceBox(height: 10.sp),
-                      ],
+                    child: ListTile(
+                      title: Text(
+                        book.title,
+                        style: bodyBold(highEmphasis),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      trailing: const Icon(Icons.book),
                     ),
                   ),
                 ],
