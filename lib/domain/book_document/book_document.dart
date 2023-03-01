@@ -7,6 +7,8 @@ class BookDocument with _$BookDocument {
   const factory BookDocument({
     @Default('') String id,
     @Default('') String title,
+    @Default('') String author,
+    @Default('') String bookImage,
     @Default('') String description,
     @Default('') String bookStatus,
   }) = _BookDocument;
