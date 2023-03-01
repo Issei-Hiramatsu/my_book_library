@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:my_book_library/importer.dart';
 
 import '/domain/book_document/book_document.dart';
-import '../../hooks/use_is_editable/use_is_editable.dart';
+import '../../../../hooks/use_is_editable/use_is_editable.dart';
 import 'elements/book_status/on_loan_status/on_loan_status.dart';
 import 'elements/book_status/overdue_status/overdue_status.dart';
 import 'elements/book_status/available_status/available_status.dart';

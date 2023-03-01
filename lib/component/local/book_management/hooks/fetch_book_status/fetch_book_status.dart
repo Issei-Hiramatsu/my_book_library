@@ -12,3 +12,39 @@ final fetchAllBookByLibrary = StreamProvider.family((
           queryService: QueryServiceRepositoryWhichUseFirebase())
       .fetchAllBookByLibrary(libraryDocument: libraryDocument);
 });
+
+final fetchAvailableBookByLibrary = StreamProvider.family((
+  ref,
+  LibraryDocument libraryDocument,
+) {
+  return QueryServiceUseCase(
+          queryService: QueryServiceRepositoryWhichUseFirebase())
+      .fetchAvailableBookByLibrary(libraryDocument: libraryDocument);
+});
+
+final fetchOnLoanBookByLibrary = StreamProvider.family((
+  ref,
+  LibraryDocument libraryDocument,
+) {
+  return QueryServiceUseCase(
+          queryService: QueryServiceRepositoryWhichUseFirebase())
+      .fetchOnLoanBookByLibrary(libraryDocument: libraryDocument);
+});
+
+final fetchOverdueBookByLibrary = StreamProvider.family((
+  ref,
+  LibraryDocument libraryDocument,
+) {
+  return QueryServiceUseCase(
+          queryService: QueryServiceRepositoryWhichUseFirebase())
+      .fetchOverdueBookByLibrary(libraryDocument: libraryDocument);
+});
+
+final fetchOtherBookByLibrary = StreamProvider.family((
+  ref,
+  LibraryDocument libraryDocument,
+) {
+  return QueryServiceUseCase(
+          queryService: QueryServiceRepositoryWhichUseFirebase())
+      .fetchOtherBookByLibrary(libraryDocument: libraryDocument);
+});

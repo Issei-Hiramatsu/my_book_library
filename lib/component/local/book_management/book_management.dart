@@ -44,10 +44,22 @@ class BookManagement extends HookConsumerWidget {
                 libraryDocument: libraryList,
                 fetchBookByLibrary: fetchAllBookByLibrary,
               )),
-              Container(),
-              Container(),
-              Container(),
-              Container(),
+              BookStatusList(
+                libraryDocument: libraryList,
+                fetchBookByLibrary: fetchAvailableBookByLibrary,
+              ),
+              BookStatusList(
+                libraryDocument: libraryList,
+                fetchBookByLibrary: fetchOnLoanBookByLibrary,
+              ),
+              BookStatusList(
+                libraryDocument: libraryList,
+                fetchBookByLibrary: fetchOverdueBookByLibrary,
+              ),
+              BookStatusList(
+                libraryDocument: libraryList,
+                fetchBookByLibrary: fetchOtherBookByLibrary,
+              )
             ],
           ))
         ],

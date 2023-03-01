@@ -21,4 +21,16 @@ abstract class IQueryService {
   Stream<List<BookDocument>> fetchAllBookByLibrary({
     required LibraryDocument libraryDocument,
   });
+  Stream<List<BookDocument>> fetchAvailableBookByLibrary({
+    required LibraryDocument libraryDocument,
+  });
+  Stream<List<BookDocument>> fetchOnLoanBookByLibrary({
+    required LibraryDocument libraryDocument,
+  });
+  Stream<List<BookDocument>> fetchOverdueBookByLibrary({
+    required LibraryDocument libraryDocument,
+  });
+  Stream<List<BookDocument>> fetchOtherBookByLibrary({
+    required LibraryDocument libraryDocument,
+  });
 }
