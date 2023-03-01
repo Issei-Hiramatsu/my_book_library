@@ -5,19 +5,19 @@ import '../../../../../domain/book_document/book_document.dart';
 import '/domain/library_document/library_document.dart';
 import 'elements/book_document_tile/book_document_tile.dart';
 
-class BookStatusList extends ConsumerWidget {
-  const BookStatusList({
+class BookListForEachStatus extends ConsumerWidget {
+  const BookListForEachStatus({
     Key? key,
-    required this.fetchBookByLibrary,
+    required this.fetchBookListByLibrary,
     required this.libraryDocument,
   }) : super(key: key);
   final LibraryDocument libraryDocument;
   final StreamProviderFamily<List<BookDocument>, LibraryDocument>
-      fetchBookByLibrary;
+      fetchBookListByLibrary;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(fetchBookByLibrary(libraryDocument)).when(
+    return ref.watch(fetchBookListByLibrary(libraryDocument)).when(
           data: (dataList) => ListView.builder(
               physics: const BouncingScrollPhysics(),
               shrinkWrap: true,

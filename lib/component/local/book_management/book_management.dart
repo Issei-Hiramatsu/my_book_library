@@ -36,32 +36,33 @@ class BookManagement extends HookConsumerWidget {
             ],
           ),
           Expanded(
-              child: TabBarView(
-            controller: bookManagementTabController,
-            children: [
-              BookStatusEditor(
-                  bookListWidget: BookStatusList(
-                libraryDocument: libraryList,
-                fetchBookByLibrary: fetchAllBookByLibrary,
-              )),
-              BookStatusList(
-                libraryDocument: libraryList,
-                fetchBookByLibrary: fetchAvailableBookByLibrary,
-              ),
-              BookStatusList(
-                libraryDocument: libraryList,
-                fetchBookByLibrary: fetchOnLoanBookByLibrary,
-              ),
-              BookStatusList(
-                libraryDocument: libraryList,
-                fetchBookByLibrary: fetchOverdueBookByLibrary,
-              ),
-              BookStatusList(
-                libraryDocument: libraryList,
-                fetchBookByLibrary: fetchOtherBookByLibrary,
-              )
-            ],
-          ))
+            child: TabBarView(
+              controller: bookManagementTabController,
+              children: [
+                BookStatusEditor(
+                    bookListWidget: BookListForEachStatus(
+                  libraryDocument: libraryList,
+                  fetchBookListByLibrary: fetchAllBookByLibrary,
+                )),
+                BookListForEachStatus(
+                  libraryDocument: libraryList,
+                  fetchBookListByLibrary: fetchAvailableBookByLibrary,
+                ),
+                BookListForEachStatus(
+                  libraryDocument: libraryList,
+                  fetchBookListByLibrary: fetchOnLoanBookByLibrary,
+                ),
+                BookListForEachStatus(
+                  libraryDocument: libraryList,
+                  fetchBookListByLibrary: fetchOverdueBookByLibrary,
+                ),
+                BookListForEachStatus(
+                  libraryDocument: libraryList,
+                  fetchBookListByLibrary: fetchOtherBookByLibrary,
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
