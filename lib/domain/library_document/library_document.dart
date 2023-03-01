@@ -16,3 +16,9 @@ class LibraryDocument with _$LibraryDocument {
 }
 
 abstract class ILibraryDocumentRepository {}
+
+abstract class IQueryService {
+  Stream<List<BookDocument>> fetchAllBookByLibrary({
+    required LibraryDocument libraryDocument,
+  });
+}
