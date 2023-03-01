@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>8201712241-qd81b39vsaeav0gbvi76ehdn0tuqb3l2.apps.googleusercontent.com</string>
+	<string>9001095961-pvcdfmsl3t0uvlh904ttdg6ood4melk7.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.8201712241-qd81b39vsaeav0gbvi76ehdn0tuqb3l2</string>
+	<string>com.googleusercontent.apps.9001095961-pvcdfmsl3t0uvlh904ttdg6ood4melk7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCM4md9zGx_98Dd9tX8TfxR4KsCNmGK_S8</string>
+	<string>AIzaSyDCMV8YWYvhMt7ei6PGaiV4leShrn_6H5Q</string>
 	<key>GCM_SENDER_ID</key>
-	<string>8201712241</string>
+	<string>9001095961</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.myBookLibrary</string>
 	<key>PROJECT_ID</key>
-	<string>mybooklibrary-4a0cd</string>
+	<string>my-tech-library</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mybooklibrary-4a0cd.appspot.com</string>
+	<string>my-tech-library.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:8201712241:ios:408b98b35af53b10e061d0</string>
+	<string>1:9001095961:ios:5aba67993ffacc6585eb88</string>
 </dict>
 </plist>

@@ -22,6 +22,8 @@ BookDocument _$BookDocumentFromJson(Map<String, dynamic> json) {
 mixin _$BookDocument {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  String get author => throw _privateConstructorUsedError;
+  String get bookImage => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get bookStatus => throw _privateConstructorUsedError;
 
@@ -37,7 +39,13 @@ abstract class $BookDocumentCopyWith<$Res> {
           BookDocument value, $Res Function(BookDocument) then) =
       _$BookDocumentCopyWithImpl<$Res, BookDocument>;
   @useResult
-  $Res call({String id, String title, String description, String bookStatus});
+  $Res call(
+      {String id,
+      String title,
+      String author,
+      String bookImage,
+      String description,
+      String bookStatus});
 }
 
 /// @nodoc
@@ -55,6 +63,8 @@ class _$BookDocumentCopyWithImpl<$Res, $Val extends BookDocument>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? author = null,
+    Object? bookImage = null,
     Object? description = null,
     Object? bookStatus = null,
   }) {
@@ -66,6 +76,14 @@ class _$BookDocumentCopyWithImpl<$Res, $Val extends BookDocument>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      author: null == author
+          ? _value.author
+          : author // ignore: cast_nullable_to_non_nullable
+              as String,
+      bookImage: null == bookImage
+          ? _value.bookImage
+          : bookImage // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -87,7 +105,13 @@ abstract class _$$_BookDocumentCopyWith<$Res>
       __$$_BookDocumentCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String description, String bookStatus});
+  $Res call(
+      {String id,
+      String title,
+      String author,
+      String bookImage,
+      String description,
+      String bookStatus});
 }
 
 /// @nodoc
@@ -103,6 +127,8 @@ class __$$_BookDocumentCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? author = null,
+    Object? bookImage = null,
     Object? description = null,
     Object? bookStatus = null,
   }) {
@@ -114,6 +140,14 @@ class __$$_BookDocumentCopyWithImpl<$Res>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      author: null == author
+          ? _value.author
+          : author // ignore: cast_nullable_to_non_nullable
+              as String,
+      bookImage: null == bookImage
+          ? _value.bookImage
+          : bookImage // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -133,6 +167,8 @@ class _$_BookDocument implements _BookDocument {
   const _$_BookDocument(
       {this.id = '',
       this.title = '',
+      this.author = '',
+      this.bookImage = '',
       this.description = '',
       this.bookStatus = ''});
 
@@ -147,6 +183,12 @@ class _$_BookDocument implements _BookDocument {
   final String title;
   @override
   @JsonKey()
+  final String author;
+  @override
+  @JsonKey()
+  final String bookImage;
+  @override
+  @JsonKey()
   final String description;
   @override
   @JsonKey()
@@ -154,7 +196,7 @@ class _$_BookDocument implements _BookDocument {
 
   @override
   String toString() {
-    return 'BookDocument(id: $id, title: $title, description: $description, bookStatus: $bookStatus)';
+    return 'BookDocument(id: $id, title: $title, author: $author, bookImage: $bookImage, description: $description, bookStatus: $bookStatus)';
   }
 
   @override
@@ -164,6 +206,9 @@ class _$_BookDocument implements _BookDocument {
             other is _$_BookDocument &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.author, author) || other.author == author) &&
+            (identical(other.bookImage, bookImage) ||
+                other.bookImage == bookImage) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.bookStatus, bookStatus) ||
@@ -172,8 +217,8 @@ class _$_BookDocument implements _BookDocument {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, title, description, bookStatus);
+  int get hashCode => Object.hash(
+      runtimeType, id, title, author, bookImage, description, bookStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -193,6 +238,8 @@ abstract class _BookDocument implements BookDocument {
   const factory _BookDocument(
       {final String id,
       final String title,
+      final String author,
+      final String bookImage,
       final String description,
       final String bookStatus}) = _$_BookDocument;
 
@@ -203,6 +250,10 @@ abstract class _BookDocument implements BookDocument {
   String get id;
   @override
   String get title;
+  @override
+  String get author;
+  @override
+  String get bookImage;
   @override
   String get description;
   @override

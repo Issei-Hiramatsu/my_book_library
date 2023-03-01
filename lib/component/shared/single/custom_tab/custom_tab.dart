@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../token/color/color.dart';
+import 'package:my_book_library/importer.dart';
 
 class SharedCustomTab extends StatelessWidget {
-  SharedCustomTab({super.key, required this.controller, required this.tabs});
+  const SharedCustomTab(
+      {super.key, required this.controller, required this.tabs});
   final TabController controller;
   final List<Widget> tabs;
   @override
