@@ -8,6 +8,8 @@ class BookDocument with _$BookDocument {
     @Default('') String id,
     @Default('') String title,
     @Default('') String author,
+    @Default('') String publisher,
+    @Default([]) List genreList,
     @Default('') String bookImage,
     @Default('') String description,
     @Default('') String bookStatus,

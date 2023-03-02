@@ -23,6 +23,8 @@ mixin _$BookDocument {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
+  String get publisher => throw _privateConstructorUsedError;
+  List<dynamic> get genreList => throw _privateConstructorUsedError;
   String get bookImage => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get bookStatus => throw _privateConstructorUsedError;
@@ -43,6 +45,8 @@ abstract class $BookDocumentCopyWith<$Res> {
       {String id,
       String title,
       String author,
+      String publisher,
+      List<dynamic> genreList,
       String bookImage,
       String description,
       String bookStatus});
@@ -64,6 +68,8 @@ class _$BookDocumentCopyWithImpl<$Res, $Val extends BookDocument>
     Object? id = null,
     Object? title = null,
     Object? author = null,
+    Object? publisher = null,
+    Object? genreList = null,
     Object? bookImage = null,
     Object? description = null,
     Object? bookStatus = null,
@@ -81,6 +87,14 @@ class _$BookDocumentCopyWithImpl<$Res, $Val extends BookDocument>
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as String,
+      publisher: null == publisher
+          ? _value.publisher
+          : publisher // ignore: cast_nullable_to_non_nullable
+              as String,
+      genreList: null == genreList
+          ? _value.genreList
+          : genreList // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
       bookImage: null == bookImage
           ? _value.bookImage
           : bookImage // ignore: cast_nullable_to_non_nullable
@@ -109,6 +123,8 @@ abstract class _$$_BookDocumentCopyWith<$Res>
       {String id,
       String title,
       String author,
+      String publisher,
+      List<dynamic> genreList,
       String bookImage,
       String description,
       String bookStatus});
@@ -128,6 +144,8 @@ class __$$_BookDocumentCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? author = null,
+    Object? publisher = null,
+    Object? genreList = null,
     Object? bookImage = null,
     Object? description = null,
     Object? bookStatus = null,
@@ -145,6 +163,14 @@ class __$$_BookDocumentCopyWithImpl<$Res>
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as String,
+      publisher: null == publisher
+          ? _value.publisher
+          : publisher // ignore: cast_nullable_to_non_nullable
+              as String,
+      genreList: null == genreList
+          ? _value._genreList
+          : genreList // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
       bookImage: null == bookImage
           ? _value.bookImage
           : bookImage // ignore: cast_nullable_to_non_nullable
@@ -168,9 +194,12 @@ class _$_BookDocument implements _BookDocument {
       {this.id = '',
       this.title = '',
       this.author = '',
+      this.publisher = '',
+      final List<dynamic> genreList = const [],
       this.bookImage = '',
       this.description = '',
-      this.bookStatus = ''});
+      this.bookStatus = ''})
+      : _genreList = genreList;
 
   factory _$_BookDocument.fromJson(Map<String, dynamic> json) =>
       _$$_BookDocumentFromJson(json);
@@ -186,6 +215,18 @@ class _$_BookDocument implements _BookDocument {
   final String author;
   @override
   @JsonKey()
+  final String publisher;
+  final List<dynamic> _genreList;
+  @override
+  @JsonKey()
+  List<dynamic> get genreList {
+    if (_genreList is EqualUnmodifiableListView) return _genreList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genreList);
+  }
+
+  @override
+  @JsonKey()
   final String bookImage;
   @override
   @JsonKey()
@@ -196,7 +237,7 @@ class _$_BookDocument implements _BookDocument {
 
   @override
   String toString() {
-    return 'BookDocument(id: $id, title: $title, author: $author, bookImage: $bookImage, description: $description, bookStatus: $bookStatus)';
+    return 'BookDocument(id: $id, title: $title, author: $author, publisher: $publisher, genreList: $genreList, bookImage: $bookImage, description: $description, bookStatus: $bookStatus)';
   }
 
   @override
@@ -207,6 +248,10 @@ class _$_BookDocument implements _BookDocument {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.author, author) || other.author == author) &&
+            (identical(other.publisher, publisher) ||
+                other.publisher == publisher) &&
+            const DeepCollectionEquality()
+                .equals(other._genreList, _genreList) &&
             (identical(other.bookImage, bookImage) ||
                 other.bookImage == bookImage) &&
             (identical(other.description, description) ||
@@ -218,7 +263,15 @@ class _$_BookDocument implements _BookDocument {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, title, author, bookImage, description, bookStatus);
+      runtimeType,
+      id,
+      title,
+      author,
+      publisher,
+      const DeepCollectionEquality().hash(_genreList),
+      bookImage,
+      description,
+      bookStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -239,6 +292,8 @@ abstract class _BookDocument implements BookDocument {
       {final String id,
       final String title,
       final String author,
+      final String publisher,
+      final List<dynamic> genreList,
       final String bookImage,
       final String description,
       final String bookStatus}) = _$_BookDocument;
@@ -252,6 +307,10 @@ abstract class _BookDocument implements BookDocument {
   String get title;
   @override
   String get author;
+  @override
+  String get publisher;
+  @override
+  List<dynamic> get genreList;
   @override
   String get bookImage;
   @override
