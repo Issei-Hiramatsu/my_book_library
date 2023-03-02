@@ -1,11 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:my_book_library/domain/book_document/book_document.dart';
 
 class BookDetail extends StatelessWidget {
-  const BookDetail({super.key});
-
+  const BookDetail({super.key, required this.book});
+  final BookDocument book;
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Image.network(
+                book.bookImage,
+                width: 220,
+                height: 220,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(book.title),
+                  Text('著者: ${book.author}'),
+                  Text('出版社; ${book.publisher}'),
+                  Row(
+                    children: [Text('ジャンル: ${book.genreList}')],
+                  )
+                ],
+              ),
+            ],
+          ),
+          Text('作品紹介'),
+          Text(book.description),
+        ],
+      ),
+    );
   }
 }
 
