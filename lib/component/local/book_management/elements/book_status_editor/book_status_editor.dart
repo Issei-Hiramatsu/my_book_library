@@ -28,28 +28,31 @@ class BookStatusEditor extends ConsumerWidget {
                   child: Text('編集', style: callOutRegular(black))),
           bookListWidget,
           isEditable
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    CancelButton(
-                      onPressed: () {
-                        ref.read(isEditableProvider.notifier).finishEdit();
-                      },
-                    ),
-                    SizedBox(width: 24.sp),
-                    FilledEnabledButton(
-                      text: '決定',
-                      textStyle: bodyBold(onPrimary),
-                      padding: EdgeInsets.symmetric(
-                        vertical: 10.sp,
-                        horizontal: 24.sp,
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      CancelButton(
+                        onPressed: () {
+                          ref.read(isEditableProvider.notifier).finishEdit();
+                        },
                       ),
-                      backgroundColor: primary,
-                      callback: () {
-                        ref.read(isEditableProvider.notifier).finishEdit();
-                      },
-                    ),
-                  ],
+                      SizedBox(width: 24.sp),
+                      FilledEnabledButton(
+                        text: '決定',
+                        textStyle: bodyBold(onPrimary),
+                        padding: EdgeInsets.symmetric(
+                          vertical: 10.sp,
+                          horizontal: 24.sp,
+                        ),
+                        backgroundColor: primary,
+                        callback: () {
+                          ref.read(isEditableProvider.notifier).finishEdit();
+                        },
+                      ),
+                    ],
+                  ),
                 )
               : Container()
         ],
