@@ -35,6 +35,7 @@ class BookManagement extends HookConsumerWidget {
               Tab(text: 'その他', height: 32.sp),
             ],
           ),
+          const SpaceBox(width: 8),
           Expanded(
             child: TabBarView(
               controller: bookManagementTabController,

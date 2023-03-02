@@ -39,7 +39,7 @@ class BookManagementPage extends HookWidget {
                   hintStyle: TextStyle(color: surfacePrimary, fontSize: 20),
                 ),
               )
-            : Container(),
+            : const Center(child: Text('図書管理ページ')),
         actions: [
           isSearchMode.value
               ? IconButton(
@@ -64,7 +64,7 @@ class BookManagementPage extends HookWidget {
                 return Card(
                     child: ListTile(title: Text(searchIndexList.value[index])));
               })
-          : BookManagement(),
+          : const BookManagement(),
       bottomNavigationBar: const BottomNavigation(),
     );
   }
