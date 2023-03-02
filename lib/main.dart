@@ -4,7 +4,7 @@ import 'firebase_options.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_book_library/importer.dart';
 
-import 'component/local/book_management/book_management.dart';
+import 'page/book_management_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: const BookManagement(),
+          home: const BookManagementPage(),
         );
       },
     );

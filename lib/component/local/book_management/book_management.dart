@@ -21,50 +21,47 @@ class BookManagement extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bookManagementTabController = useTabController(initialLength: 5);
-    return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          SharedCustomTab(
+    return Column(
+      children: [
+        SharedCustomTab(
+          controller: bookManagementTabController,
+          tabs: [
+            Tab(text: 'すべて', height: 32.sp),
+            Tab(text: '蔵書', height: 32.sp),
+            Tab(text: '貸出中', height: 32.sp),
+            Tab(text: '延滞中', height: 32.sp),
+            Tab(text: 'その他', height: 32.sp),
+          ],
+        ),
+        Expanded(
+          child: TabBarView(
             controller: bookManagementTabController,
-            tabs: [
-              Tab(text: 'すべて', height: 32.sp),
-              Tab(text: '蔵書', height: 32.sp),
-              Tab(text: '貸出中', height: 32.sp),
-              Tab(text: '延滞中', height: 32.sp),
-              Tab(text: 'その他', height: 32.sp),
+            children: [
+              BookStatusEditor(
+                  bookListWidget: BookListForEachStatus(
+                libraryDocument: libraryList,
+                fetchBookListByLibrary: fetchAllBookByLibrary,
+              )),
+              BookListForEachStatus(
+                libraryDocument: libraryList,
+                fetchBookListByLibrary: fetchAvailableBookByLibrary,
+              ),
+              BookListForEachStatus(
+                libraryDocument: libraryList,
+                fetchBookListByLibrary: fetchOnLoanBookByLibrary,
+              ),
+              BookListForEachStatus(
+                libraryDocument: libraryList,
+                fetchBookListByLibrary: fetchOverdueBookByLibrary,
+              ),
+              BookListForEachStatus(
+                libraryDocument: libraryList,
+                fetchBookListByLibrary: fetchOtherBookByLibrary,
+              )
             ],
           ),
-          Expanded(
-            child: TabBarView(
-              controller: bookManagementTabController,
-              children: [
-                BookStatusEditor(
-                    bookListWidget: BookListForEachStatus(
-                  libraryDocument: libraryList,
-                  fetchBookListByLibrary: fetchAllBookByLibrary,
-                )),
-                BookListForEachStatus(
-                  libraryDocument: libraryList,
-                  fetchBookListByLibrary: fetchAvailableBookByLibrary,
-                ),
-                BookListForEachStatus(
-                  libraryDocument: libraryList,
-                  fetchBookListByLibrary: fetchOnLoanBookByLibrary,
-                ),
-                BookListForEachStatus(
-                  libraryDocument: libraryList,
-                  fetchBookListByLibrary: fetchOverdueBookByLibrary,
-                ),
-                BookListForEachStatus(
-                  libraryDocument: libraryList,
-                  fetchBookListByLibrary: fetchOtherBookByLibrary,
-                )
-              ],
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }
