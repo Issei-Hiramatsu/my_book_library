@@ -6,34 +6,36 @@ class BookDetail extends StatelessWidget {
   final BookDocument book;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Image.network(
-                book.bookImage,
-                width: 220,
-                height: 220,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(book.title),
-                  Text('著者: ${book.author}'),
-                  Text('出版社; ${book.publisher}'),
-                  Row(
-                    children: [Text('ジャンル: ${book.genreList}')],
-                  )
-                ],
-              ),
-            ],
-          ),
-          Text('作品紹介'),
-          Text(book.description),
-        ],
-      ),
+    return Column(
+      children: [
+        Row(
+          children: [
+            Image.network(
+              book.bookImage,
+              width: 220,
+              height: 220,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(book.title),
+                Text('著者: ${book.author}'),
+                Text('出版社; ${book.publisher}'),
+                Row(
+                  children: [
+                    Text(
+                      'ジャンル: ${book.genreList}',
+                      overflow: TextOverflow.ellipsis,
+                    )
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
+        Text('作品紹介'),
+        Text(book.description),
+      ],
     );
   }
 }
