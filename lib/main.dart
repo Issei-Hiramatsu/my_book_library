@@ -20,12 +20,9 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, child) {
-        return MaterialApp(
+        return const MaterialApp(
           title: 'myBookLibrary',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: const BookManagementPage(),
+          home: BookManagementPage(),
         );
       },
     );
