@@ -20,11 +20,18 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, child) {
-        return const MaterialApp(
+        return MaterialApp(
           title: 'myBookLibrary',
-          home: BookManagementPage(),
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: const BookManagementPage(),
         );
       },
     );
   }
 }
+
+//編集した際に編集した本を表示させる
+//あなたが編集したのは以下の本です。
+//写真に関するエラー

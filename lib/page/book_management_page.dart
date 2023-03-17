@@ -5,6 +5,8 @@ import 'package:my_book_library/importer.dart';
 import '../component/local/book_management/book_management.dart';
 import '../component/local/book_management/elements/all_book_status_list/hooks/all_book_list.dart';
 import '../component/shared/single/bottom_navigation/bottom_navigation.dart';
+import '../component/shared/token/navigator/navigator.dart';
+import 'book_detail_page.dart';
 
 class BookManagementPage extends HookWidget {
   const BookManagementPage({super.key});
@@ -62,9 +64,21 @@ class BookManagementPage extends HookWidget {
               itemCount: searchIndexList.value.length,
               itemBuilder: (context, index) {
                 return Card(
-                    child: ListTile(title: Text(searchIndexList.value[index])));
+                    child: ListTile(
+                  title: Text(searchIndexList.value[index]),
+                  onTap: () {
+                    NavigatorPush(context,
+                        page: BookDetailPage(
+                          book: allBookList[index],
+                        ));
+                  },
+                ));
               })
           : const BookManagement(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (() {}),
+      ),
       bottomNavigationBar: const BottomNavigation(),
     );
   }

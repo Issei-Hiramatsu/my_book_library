@@ -11,6 +11,7 @@ class BookDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('本詳細ページ'),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.edit))],
       ),
       body: BookDetail(book: book),
     );
